@@ -94,14 +94,6 @@ sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
 
-/* =============================================================================
-   Lists
-   ========================================================================== */
-
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
-dd { margin: 0 0 0 40px; }
-nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
-
 
 /* =============================================================================
    Embedded content
@@ -136,7 +128,7 @@ form { margin: 0; }
 fieldset { border: 0; margin: 0; padding: 0; }
 
 /* Indicate that 'label' will shift focus to the associated form element */
-label { cursor: pointer; }
+label { cursor: pointer; display: none; }
 
 /*
  * 1. Correct color not inheriting in IE6/7/8/9
@@ -218,12 +210,81 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+html {
+    background: #333 url(/includes/img/bg-tile.png) repeat top left;
+    color: #fff;
+    font-family: 'Advent Pro', Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    margin: 15px 0 0 36px;
+}
+
+header {
+    width: 600px;
+}
+
+header h1 {
+    font-size: 80px;
+    font-weight: 100;
+    margin: 0;
+}
+
+header p {
+    font-size: 15px;
+}
 
 
+/* the form */
+    form {
+        border-bottom: 1px solid #fff;
+        padding-bottom: 20px;
+    }
 
+    form p,
+    input,
+    select,
+    button {
+        display: inline-block;
+    }
 
+    input,
+    button,
+    select {
+        font-family: 'Advent Pro', Helvetica, Arial, sans-serif;
+        background: transparent;
+        border: none;
+        color: #fff;
+    }
 
+    input {
+        width: 100px;
+        border-bottom: dashed 3px #fa1eaa;
+    }
 
+    select {
+        width: auto;
+        color: #fa1eaa;
+    }
+
+/* the results! */
+    #results dd,
+    #results dt {
+        padding-left: 56px;
+    }
+
+    #results dd {
+        font-weight: 100;
+        font-size: 80px;
+        margin: 0;
+    }
+
+    #results dt {
+        color: #fa1eaa;
+    }
+
+    #results span {
+        position: absolute;
+        left: 36px;
+    }
 
 
 
