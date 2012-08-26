@@ -5,7 +5,7 @@ var DC = DC || {};
 
 // deconvertor settings
 DC.settings = {
-    conversionCount: 2 // how many different units to convert to
+    conversionCount: 3 // how many different units to convert to
 };
 
 
@@ -29,6 +29,10 @@ DC.convertFrom = {
     },
 
     // WEIGHT
+    'g' : {
+        'type' : 'weight',
+        'rate' : 0.001 // 1000g = 1kg
+    },
     'kg' : {
         'type' : 'weight',
         'rate' : 1 // ROOT = 1kg
@@ -85,19 +89,60 @@ DC.convertTo = {
         {
             'description' : 'km',
             'rate' : 1000
-        },*/
+        },
+        {
+            'description' : '',
+            'rate' : 1
+        }
+        */
 
         {
             'description': 'light years',
             'rate': 9460528400000000
         },
         {
+            'description': 'times the distance from the earth to the sun',
+            'rate': 149597870700
+        },
+        {
             'description': 'times the distance from the earth to the moon',
             'rate': 384400000
         },
         {
+            'description': 'times the distance to the centre of the Earth',
+            'rate': 6371000
+        },
+        {
+            'description': 'times the length of line drawn by a typical lead pencil',
+            'rate': 56327.04
+        },
+        {
+            'description': 'times the distance covered by a fine tipped typical ball point pen',
+            'rate': 13679.42
+        },
+        {
+            'description': 'times the length of the Great Wall of China added during the Ming Dynasty',
+            'rate': 10943.53
+        },
+        {
+            'description': 'times the distance of the furthest paper aeroplane flight',
+            'rate': 63.19
+        },
+        {
+            'description': 'Blue Whale penises',
+            'rate': 2.4
+        },
+        {
             'description': 'stacked up Brian Blesseds',
             'rate': 1.75
+        },
+        {
+            'description': 'stacked up Dave Benson Phillips',
+            'rate': 1.7018
+        },
+        {
+            'description': 'times the height of Thumbellina, the world\'s smallest horse',
+            'rate': 0.445
         },
         {
             'description': 'lined up red blood cells',
@@ -108,10 +153,54 @@ DC.convertTo = {
 
     // base unit = 1kg
     'weight' : [
+        {
+            'description' : 'times the weight of dog excrement dumped on the streets of Paris in a year',
+            'rate' : 50000000
+        },
+        {
+            'description' : 'Times the weight of the liver of a Great White Shark',
+            'rate' : 456
+        },
+        {
+            'description' : 'times the weight of Michael van wijk - Wolf from Gladiators',
+            'rate' : 95
+        },
+        {
+            'description' : 'times the weight of Mr T\'s gold Chains',
+            'rate' : 9.07
+        },
+        {
+            'description' : 'times the weight of a London 2012 Olympic Gold medal',
+            'rate' : 0.380
+        }
     ],
 
     // base unit = 1 day
     'time' : [
+        {
+            'description' : 'times the half life of a banana',
+            'rate' : 45655300000000000 // 1.25 billion years
+        },
+        {
+            'description' : 'times how long it takes a beaver to build a lodge',
+            'rate' : 20
+        },
+        {
+            'description' : 'times how long it takes the takes for the Lockheed SR-71 (Blackbird) to fly from London To New York',
+            'rate' : 0.080231481481481459195 // 1 hour 55 minutes 32 seconds
+        },
+        {
+            'description' : 'times how long it would take to fall through the earth',
+            'rate' : 0.0298611 // 43mins
+        },
+        {
+            'description' : 'times the length of the 1896 war between Zanzibar & England',
+            'rate' : 0.0263889 // 38mins
+        },
+        {
+            'description' : 'times how long it takes Kriss Akabusi to complete a 400m hurdles race',
+            'rate' : 0.000554745 // 47.93 seconds
+        }
     ],
 
     // base unit = 1 day
@@ -154,7 +243,7 @@ DC.convert = function(value, convertFrom){
     _.each(newUnits, function(unit){
         conversions.push({
             'description': unit.description,
-            'value': value * ((1/unit.rate) * conversionRate)//.toFixed(20)
+            'value': value * ((1/unit.rate) * conversionRate).toPrecision(6)
         });
     });
 

@@ -1,11 +1,8 @@
-/* Author:
-
-*/
+/* GO! */
 $(document).ready(function(){
     $('#go').on('click', function(event){
         event.preventDefault();
 
-//        console.log('clicked!');
         var value = $('#unit-amount').val();
         var unit = $('#unit-from').val();
 
