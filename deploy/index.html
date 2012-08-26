@@ -35,14 +35,16 @@
       <form action="">
           <p>I would like to deconvert </p>
           <label for="unit-amount">Amount:</label>
-          <input type="text" id="unit-amount" name="unit-amount">
+          <input type="text" id="unit-amount" name="unit-amount" pattern="\d*(\.\d+)?" placeholder="how many">
 
           <label for="unit-from">Unit:</label>
-          <select name="unit-from" id="unit-from">
-              <option value="centimetres">cm</option>
-              <option value="metres">metres</option>
-              <option value="kilometres">kilometres</option>
-          </select>
+          <div class="select-container">
+            <select name="unit-from" id="unit-from">
+                <option value="metres">metres</option>
+                <option value="kilometres">km</option>
+            </select>
+          </div>
+
           <button type="submit" id="go">Go!</button>
       </form>
 
@@ -69,6 +71,7 @@
   <script src="includes/js/deconverter.js"></script>
   <script src="includes/js/plugins.js"></script>
   <script src="includes/js/script.js"></script>
+  <script src="includes/js/gunt-badge.min.js"></script>
   <!-- end scripts -->
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.

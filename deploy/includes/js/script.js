@@ -13,6 +13,10 @@ $(document).ready(function(){
 
         displayResults(conversions);
     });
+
+    $("select").on('change', function(e){
+        this.blur();
+    });
 });
 
 // show the results on the page

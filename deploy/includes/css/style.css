@@ -211,15 +211,16 @@ td { vertical-align: top; }
    ========================================================================== */
 
 html {
-    background: #333 url(/includes/img/bg-tile.png) repeat top left;
+    background: #333 url(../img/bg-tile.png) repeat top left;
     color: #fff;
     font-family: 'Advent Pro', Helvetica, Arial, sans-serif;
     font-size: 30px;
     margin: 15px 0 0 36px;
 }
 
-header {
-    width: 600px;
+header,
+form {
+    max-width: 600px;
 }
 
 header h1 {
@@ -253,17 +254,34 @@ header p {
         background: transparent;
         border: none;
         color: #fff;
+        outline:none;
     }
 
     input {
-        width: 100px;
+        width: 4.1em;
         border-bottom: dashed 3px #fa1eaa;
     }
 
-    select {
-        width: auto;
-        color: #fa1eaa;
+    input:invalid {
+      background:rgba(255,0,0,0.5);
     }
+
+    .select-container {
+      width:4em;
+      display:inline-block;
+      overflow:hidden;
+    }
+
+    select {
+      width:6em;
+      color: #fa1eaa;
+      border-radius: 0;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      background:url(../img/select-arrow.png) #fff no-repeat right center;
+      padding:10px 30px 10px 10px;
+    }
+
 
 /* the results! */
     #results dd,
@@ -274,11 +292,13 @@ header p {
     #results dd {
         font-weight: 100;
         font-size: 80px;
+        line-height: 1;
         margin: 0;
     }
 
     #results dt {
         color: #fa1eaa;
+        margin-bottom:1em;
     }
 
     #results span {
@@ -300,8 +320,31 @@ header p {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+@media only screen and (max-width: 480px) {
+  html {
+    font-size:16px;
+    margin:10px 5%;
+  }
+  header,
+  form {
+    max-width: 100%;
+  }
+  header h1 {
+    font-size:40px;
+  }
+  form p {
+    display:block;
+  }
+  input[type="text"] {
+    width:6em;
+  }
+  select {
+    background-image:none;
+  }
+  #results dd {
+    font-size: 40px;
+  }
+
 }
 
 
