@@ -37,7 +37,7 @@ DC.convertFrom = {
         'type' : 'weight',
         'rate' : 1 // ROOT = 1kg
     },
-    'ton' : {
+    'tons' : {
         'type' : 'weight',
         'rate' : 1000 // 1 ton = 1000kg
     },
@@ -64,6 +64,20 @@ DC.convertFrom = {
     'kmph' : {
         'type' : 'speed',
         'rate' : 0.621371 // 1mph = 1.60934kmph
+    },
+
+    // MONEY
+    'pounds' : {
+        'type' : 'money',
+        'rate' : 1
+    },
+    'mpounds' : {
+        'type' : 'money',
+        'rate' : 100000
+    },
+    'bpounds' : {
+        'type' : 'money',
+        'rate' : 1000000000
     }
 };
 
@@ -175,6 +189,7 @@ DC.convertTo = {
         }
     ],
 
+
     // base unit = 1 day
     'time' : [
         {
@@ -203,6 +218,7 @@ DC.convertTo = {
         }
     ],
 
+
     // base unit = 1 day
     'speed' : [
         {
@@ -217,9 +233,100 @@ DC.convertTo = {
             'description' : 'times the speed of Usain Bolt during a 100 metres race',
             'rate' : 27.45
         }
+    ],
+
+
+    // base unit = 1 pound
+    'money' : [
+        {
+            'description' : '',
+            'rate' : 1
+        },
+        {
+            'description' : '',
+            'rate' : 1
+        },
+        {
+            'description' : '',
+            'rate' : 1
+        }
     ]
 };
 
+
+/*
+ *
+ */
+DC.calculateValue = function(value, unitRate, conversionRate) {
+
+    var calculatedValue = value * ((1/unitRate) * conversionRate);
+
+    // exponential number - shorten
+    if (calculatedValue.toString().match(/e/)) {
+      calculatedValue = makePrecise(calculatedValue);
+
+    // no exponential...
+    } else if (calculatedValue.toString().length > 10) {
+      calculatedValue = makeShorter(calculatedValue);
+
+    // no exponential...
+    } else {
+      console.log('no need to change ' + calculatedValue);
+    }
+
+    return calculatedValue;
+
+
+
+    // Get a nice decimal place precision for the scientific notation number.
+    function makePrecise(num) {
+        var numberArray = num.toString().split('e'),
+            value = numberArray[0],
+            exponent = numberArray[1].replace("+", ""),
+            newNum = value.substring(0,6) + " x 10<sup>"+exponent+"</sup>";
+        console.log("makePrecise", num, newNum);
+        return newNum;
+    }
+
+
+    // Get a nice decimal place precision for the scientific notation number.
+    function makeShorter(num) {
+
+        var numString = num.toString(),
+            decimalMatch = numString.indexOf('.'),
+            exponent, newNum;
+
+        // no decimal point, just shorten
+        if (decimalMatch === -1) {
+            exponent = numString.length - 1;
+            newNum = numString.substring(0,1) + "." + numString.substring(1,5) +" x 10<sup>"+exponent+"</sup>";
+            console.log("makeShorter (no decimal point)", num, newNum);
+            return newNum;
+
+        // there is a decimal point...woo!
+        } else {
+
+            // decimal is after first 10 chars, make exp
+            if (decimalMatch > 8) {
+
+                exponent = decimalMatch - 1;
+                newNum = numString.substring(0,1) + "." + numString.substring(1,5) +" x 10<sup>"+exponent+"</sup>";
+                console.log("makeShorter (no decimal point in first 8 chars)", num, newNum);
+                return newNum;
+
+            // decimal is in first 8 chars, so just remove the rest
+            } else {
+                var nonZeroChar = numString.match(/[1-9]/),
+                    nonZeroPos = numString.indexOf(nonZeroChar);
+                console.log(numString, nonZeroChar, nonZeroPos);
+
+                newNum = numString.substring(0,nonZeroPos+3);
+                console.log("makeShorter (decimal point in first 8 chars)", num, newNum);
+                return newNum;
+            }
+        }
+    }
+};
 
 /*
  * converts a value from one unit to a selection of other units
@@ -241,11 +348,15 @@ DC.convert = function(value, convertFrom){
 
     // loop through each new unit and calculate
     _.each(newUnits, function(unit){
+
+        var calculatedValue = DC.calculateValue(value, unit.rate, conversionRate);
+
         conversions.push({
             'description': unit.description,
-            'value': value * ((1/unit.rate) * conversionRate).toPrecision(6)
+            'value': calculatedValue
         });
     });
+    console.log("---");
 
     return conversions;
 };
