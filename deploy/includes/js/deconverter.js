@@ -186,6 +186,10 @@ DC.convertTo = {
         {
             'description' : 'times the weight of a London 2012 Olympic Gold medal',
             'rate' : 0.380
+        },
+        {
+            'description' : 'times the weight an ant can lift',
+            'rate' : 0.002 // 2 grams
         }
     ],
 
@@ -215,6 +219,10 @@ DC.convertTo = {
         {
             'description' : 'times how long it takes Kriss Akabusi to complete a 400m hurdles race',
             'rate' : 0.000554745 // 47.93 seconds
+        },
+        {
+            'description' : 'times how long it takes to get from Leicester Square to Covent Garden on the Piccadilly Line',
+            'rate' : 0.000428241 // 37 seconds
         }
     ],
 
@@ -232,6 +240,30 @@ DC.convertTo = {
         {
             'description' : 'times the speed of Usain Bolt during a 100 metres race',
             'rate' : 27.45
+        },
+        {
+            'description' : 'times the speed of the Lockheed SR-71 (Blackbird)',
+            'rate' : 2200
+        },
+        {
+            'description' : 'times the speed that a great white shark swims at',
+            'rate' : 24.9
+        },
+        {
+            'description' : 'times the top speed of a garden snail',
+            'rate' : 0.03
+        },
+        {
+            'description' : 'times the speed of a mantis shrimp attack',
+            'rate' : 50
+        },
+        {
+            'description' : 'times the speed that an AK-47 bullet travels',
+            'rate' : 1600
+        },
+        {
+            'description' : 'times the top speed of a horse',
+            'rate' : 35
         }
     ],
 
@@ -239,16 +271,32 @@ DC.convertTo = {
     // base unit = 1 pound
     'money' : [
         {
-            'description' : '',
-            'rate' : 1
+            'description' : 'times the cost of the most expensive dog in the world, Big Splash the red Tibetan mastiff',
+            'rate' : 945000
         },
         {
-            'description' : '',
-            'rate' : 1
+            'description' : 'times the cost of The Shard',
+            'rate' : 450000000 // £450m
         },
         {
-            'description' : '',
-            'rate' : 1
+            'description' : 'times the cost of the London 2012 Olympic Games',
+            'rate' : 10800000000 // £10.8bn
+        },
+        {
+            'description' : 'times the GDP of Palau',
+            'rate' : 177740000000 // £177.74bn
+        },
+        {
+            'description' : 'times the amount Bill Gates makes every second',
+            'rate' : 189.75
+        },
+        {
+            'description' : 'times the average cost of a 2012 Team GB medal',
+            'rate' : 10000000 // £10m
+        },
+        {
+            'description' : 'times the cost of a one way second clase ticket on the Titanic',
+            'rate' : 12
         }
     ]
 };
@@ -316,17 +364,42 @@ DC.calculateValue = function(value, unitRate, conversionRate) {
 
             // decimal is in first 8 chars, so just remove the rest
             } else {
-                var nonZeroChar = numString.match(/[1-9]/),
-                    nonZeroPos = numString.indexOf(nonZeroChar);
-                console.log(numString, nonZeroChar, nonZeroPos);
 
-                newNum = numString.substring(0,nonZeroPos+3);
+                // positive - just use decimal
+                if (num > 1) {
+                    exponent = decimalMatch + 2;
+
+                // negative - find first significant figure
+                } else {
+                    var nonZeroChar = numString.match(/[1-9]/);
+                    exponent = numString.indexOf(nonZeroChar);
+                }
+
+                newNum = numString.substring(0,exponent+3);
                 console.log("makeShorter (decimal point in first 8 chars)", num, newNum);
                 return newNum;
             }
         }
     }
 };
+
+/*
+// test values
+DC.calculateValue("2.132434456e-18", 1, 1);
+DC.calculateValue("0.000000000000000000132354234235", 1, 1);
+DC.calculateValue("0.0000132354234235", 1, 1);
+DC.calculateValue("0.132354234235", 1, 1);
+DC.calculateValue("0.132354", 1, 1);
+DC.calculateValue("1.3", 1, 1);
+DC.calculateValue("1", 1, 1);
+DC.calculateValue("5693234", 1, 1);
+DC.calculateValue("5693234.2342348923491283471928347", 1, 1);
+DC.calculateValue("5693234234234892349128347192.8347", 1, 1);
+DC.calculateValue("2.132434456e7", 1, 1);
+DC.calculateValue("2.132434456e18", 1, 1);
+DC.calculateValue("2.132434456e28", 1, 1);
+*/
+
 
 /*
  * converts a value from one unit to a selection of other units

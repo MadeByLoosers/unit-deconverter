@@ -6,6 +6,10 @@ $(document).ready(function(){
         var value = $('#unit-amount').val();
         var unit = $('#unit-from').val();
 
+        if (value.length < 1 || parseFloat(value) === 0) {
+            return;
+        }
+
         var conversions = DC.convert(value, unit);
 
         displayResults(conversions);

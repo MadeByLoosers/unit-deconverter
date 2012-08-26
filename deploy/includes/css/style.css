@@ -100,7 +100,8 @@ html {
 }
 
 header,
-form {
+form,
+#results {
     max-width: 700px;
 }
 
