@@ -40,8 +40,11 @@
           <label for="unit-from">Unit:</label>
           <div class="select-container">
             <select name="unit-from" id="unit-from">
-                <option value="metres">metres</option>
-                <option value="kilometres">km</option>
+                <option value="mm">mm</option>
+                <option value="metres" selected>metres</option>
+                <option value="km">km</option>
+                <option value="mph">mph</option>
+                <option value="kmph">kmph</option>
             </select>
           </div>
 
@@ -52,7 +55,7 @@
   </div>
 
   <script type="text/html" id='result-items'>
-    <% console.log('the results are', results); %>
+    <% /*console.log('the results are', results);*/ %>
     <% _.each(results, function(result){ %>
       <!-- use variables -->
       <dd><span>= </span><%= result.value %></dd>
