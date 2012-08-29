@@ -155,7 +155,7 @@ DC.convertTo = {
             'rate': 1.7018
         },
         {
-            'description': 'times the height of Thumbellina, the world\'s smallest horse',
+            'description': 'times the height of Thumbelina, the world\'s smallest horse',
             'rate': 0.445
         },
         {
@@ -172,11 +172,11 @@ DC.convertTo = {
             'rate' : 50000000
         },
         {
-            'description' : 'Times the weight of the liver of a Great White Shark',
+            'description' : 'times the weight of the liver of a Great White Shark',
             'rate' : 456
         },
         {
-            'description' : 'times the weight of Michael van wijk - Wolf from Gladiators',
+            'description' : 'times the weight of Michael Van Wijk - Wolf from Gladiators',
             'rate' : 95
         },
         {
@@ -295,7 +295,7 @@ DC.convertTo = {
             'rate' : 10000000 // £10m
         },
         {
-            'description' : 'times the cost of a one way second clase ticket on the Titanic',
+            'description' : 'times the cost of a one way second class ticket on the Titanic',
             'rate' : 12
         }
     ]
