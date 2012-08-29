@@ -6,7 +6,7 @@ $(document).ready(function(){
         var value = $('#unit-amount').val();
         var unit = $('#unit-from').val();
 
-        if (value.length < 1 || parseFloat(value) === 0) {
+        if (value.length < 1 || parseFloat(value) === 0 || _.isNaN(parseFloat(value))) {
             return;
         }
 
