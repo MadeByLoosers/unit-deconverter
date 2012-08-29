@@ -1,17 +1,22 @@
-/* Author:
-
-*/
+/* GO! */
 $(document).ready(function(){
     $('#go').on('click', function(event){
         event.preventDefault();
 
-        console.log('clicked!');
         var value = $('#unit-amount').val();
         var unit = $('#unit-from').val();
+
+        if (value.length < 1 || parseFloat(value) === 0) {
+            return;
+        }
 
         var conversions = DC.convert(value, unit);
 
         displayResults(conversions);
+    });
+
+    $("select").on('change', function(e){
+        this.blur();
     });
 });
 
