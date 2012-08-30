@@ -143,6 +143,8 @@ header p {
     input {
         width: 4.1em;
         border-bottom: dashed 3px #fa1eaa;
+        -webkit-appearance:none;
+        border-radius:0;
     }
 
     input:invalid {
