@@ -198,9 +198,14 @@ header p {
         margin: 0;
     }
 
+    #results dd.result-description {
+      font-size: 15px;
+      margin-bottom:2em;
+      font-weight: 400;
+    }
+
     #results dt {
         color: #fa1eaa;
-        margin-bottom:1em;
     }
 
     #results span {

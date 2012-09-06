@@ -93,73 +93,90 @@ DC.convertTo = {
             DEBUG values = easily test calculations are right
 
         {
-            'description' : 'metres',
+            'name': 'unitName'
+            'description': 'metres',
             'rate' : 1
         },
         {
-            'description' : 'mm',
+            'name': 'unitName'
+            'description': 'mm',
             'rate' : 0.001
         },
         {
-            'description' : 'km',
+            'name': 'unitName'
+            'description': 'km',
             'rate' : 1000
         },
         {
-            'description' : '',
+            'name': 'unitName'
+            'description': '',
             'rate' : 1
         }
         */
 
         {
-            'description': 'light years',
+            'name': 'Light Years',
+            'description': 'The distance that light will travel in a vacuum in one year.',
             'rate': 9460528400000000
         },
         {
-            'description': 'times the distance from the earth to the sun',
+            'name': 'Trips to the sun',
+            'description': 'The distance from earth to the sun.',
             'rate': 149597870700
         },
         {
-            'description': 'times the distance from the earth to the moon',
+            'name': 'Trips to the moon',
+            'description': 'The distance from earth to the sun.',
             'rate': 384400000
         },
         {
-            'description': 'times the distance to the centre of the Earth',
+            'name': 'Journeys to the center of the Earth',
+            'description': 'The distance from the surface to the centre of the Earth.',
             'rate': 6371000
         },
+        // {
+        //     'name': 'unitName'
+        //     'description': 'times the length of line drawn by a typical lead pencil',
+        //     'rate': 56327.04
+        // },
+        // {
+        //     'name': 'unitName'
+        //     'description': 'times the distance covered by a fine tipped typical ball point pen',
+        //     'rate': 13679.42
+        // },
         {
-            'description': 'times the length of line drawn by a typical lead pencil',
-            'rate': 56327.04
+            'name': 'Great Walls of China',
+            'description': 'The length of the Great Wall of China, including trenches and sections of natural barriers such as hills.',
+            'rate': 8850000
         },
         {
-            'description': 'times the distance covered by a fine tipped typical ball point pen',
-            'rate': 13679.42
-        },
-        {
-            'description': 'times the length of the Great Wall of China added during the Ming Dynasty',
-            'rate': 10943.53
-        },
-        {
-            'description': 'times the distance of the furthest paper aeroplane flight',
+            'name': 'Paper plane flights',
+            'description': 'The distance of the furthest paper aeroplane flight.',
             'rate': 63.19
         },
         {
-            'description': 'Blue Whale penises',
+            'name': 'Blue Whale penises',
+            'description': 'The longest measured Blue Whale Penis.',
             'rate': 2.4
         },
         {
-            'description': 'stacked up Brian Blesseds',
+            'name': 'Brian Blesseds',
+            'description': 'The height of multiple Brian Blesseds standing on each others heads.',
             'rate': 1.75
         },
         {
-            'description': 'stacked up Dave Benson Phillips',
+            'name': 'Dave Benson Phillips',
+            'description': 'The height of multiple Dave Benson Phillips standing on each others heads.',
             'rate': 1.7018
         },
         {
-            'description': 'times the height of Thumbelina, the world\'s smallest horse',
+            'name': 'Tiny horses',
+            'description': 'The height of Thumbelina, the world\'s smallest horse.',
             'rate': 0.445
         },
         {
-            'description': 'lined up red blood cells',
+            'name': 'Red blood cells',
+            'description': 'The width of a red blood cell.',
             'rate': 0.000006
         }
     ],
@@ -168,27 +185,38 @@ DC.convertTo = {
     // base unit = 1kg
     'weight' : [
         {
-            'description' : 'times the weight of dog excrement dumped on the streets of Paris in a year',
+            'name': 'Massive piles of dog excrement',
+            'description': 'The weight of dog excrement dumped on the streets of Paris in a year.',
             'rate' : 50000000
         },
         {
-            'description' : 'times the weight of the liver of a Great White Shark',
+            'name': 'Great White Shark livers',
+            'description': 'The weight of a Great White Shark\'s liver.',
             'rate' : 456
         },
         {
-            'description' : 'times the weight of Michael Van Wijk - Wolf from Gladiators',
+            'name': 'Wolves',
+            'description': 'The weight of Michael Van Wijk - Wolf from Gladiators.',
             'rate' : 95
         },
         {
-            'description' : 'times the weight of Mr T\'s gold Chains',
-            'rate' : 9.07
+            'name': 'Grey Wolves',
+            'description': 'The average weight of an actual wolf (European Grey).',
+            'rate' : 38.5
         },
+        // {
+        //     'name': 'Mr T\'s ',
+        //     'description': 'times the weight of Mr T\'s gold Chains',
+        //     'rate' : 9.07
+        // },
         {
-            'description' : 'times the weight of a London 2012 Olympic Gold medal',
+            'name': 'Gold medals',
+            'description': 'The weight of a London 2012 Olympic Gold medal.',
             'rate' : 0.380
         },
         {
-            'description' : 'times the weight an ant can lift',
+            'name': 'Antloads',
+            'description': 'The weight an ant can lift.',
             'rate' : 0.002 // 2 grams
         }
     ],
@@ -197,105 +225,128 @@ DC.convertTo = {
     // base unit = 1 day
     'time' : [
         {
-            'description' : 'times the half life of a banana',
+            'name': 'Banana half-lives',
+            'description': 'The time it takes for a banana to lose half it\'s radioactivity.',
             'rate' : 45655300000000000 // 1.25 billion years
         },
         {
-            'description' : 'times how long it takes a beaver to build a lodge',
+            'name': 'Beaver lodges',
+            'description': 'How long it takes a beaver to build a lodge.',
             'rate' : 20
         },
         {
-            'description' : 'times how long it takes the takes for the Lockheed SR-71 (Blackbird) to fly from London To New York',
+            'name': 'Cross-Atlantic Blackbird journeys',
+            'description': 'The time it takes the takes for the Lockheed SR-71 (Blackbird) to fly from London To New York.',
             'rate' : 0.080231481481481459195 // 1 hour 55 minutes 32 seconds
         },
         {
-            'description' : 'times how long it would take to fall through the earth',
+            'name': 'Earthfalls',
+            'description': 'How long it would take to fall through the Earth.',
             'rate' : 0.0298611 // 43mins
         },
         {
-            'description' : 'times the length of the 1896 war between Zanzibar & England',
+            'name': 'Short wars',
+            'description': 'The length of the shortest war in history, the 1896 Anglo-Zanzibar war.',
             'rate' : 0.0263889 // 38mins
         },
         {
-            'description' : 'times how long it takes Kriss Akabusi to complete a 400m hurdles race',
+            'name': 'Akabusi races',
+            'description': 'The time it takes Kriss Akabusi to complete a 400m hurdles race.',
             'rate' : 0.000554745 // 47.93 seconds
         },
         {
-            'description' : 'times how long it takes to get from Leicester Square to Covent Garden on the Piccadilly Line',
+            'name': 'Pointless tube journeys',
+            'description': 'How long it takes to get from Leicester Square to Covent Garden on London\'s Piccadilly Line.',
             'rate' : 0.000428241 // 37 seconds
         }
     ],
 
 
-    // base unit = 1 day
+    // base unit = 1 mph
     'speed' : [
+        // {
+        //     'name': 'unitName',
+        //     'description': 'times the speed of light',
+        //     'rate' : 670616629
+        // },
+        // {
+        //     'name': 'unitName',
+        //     'description': 'times the speed of sound',
+        //     'rate' : 761.207051
+        // },
         {
-            'description' : 'times the speed of light',
-            'rate' : 670616629
-        },
-        {
-            'description' : 'times the speed of sound',
-            'rate' : 761.207051
-        },
-        {
-            'description' : 'times the speed of Usain Bolt during a 100 metres race',
+            'name': 'Bolts',
+            'description': 'The speed of Usain Bolt during a 100 metres race.',
             'rate' : 27.45
         },
         {
-            'description' : 'times the speed of the Lockheed SR-71 (Blackbird)',
+            'name': 'Supersonic Blackbirds',
+            'description': 'The speed of the Lockheed SR-71 (Blackbird).',
             'rate' : 2200
         },
         {
-            'description' : 'times the speed that a great white shark swims at',
+            'name': 'Swimming sharks',
+            'description': 'The speed that a great white shark swims at.',
             'rate' : 24.9
         },
         {
-            'description' : 'times the top speed of a garden snail',
+            'name': 'Quickly crawling snails',
+            'description': 'The top speed of a garden snail.',
             'rate' : 0.03
         },
         {
-            'description' : 'times the speed of a mantis shrimp attack',
+            'name': 'Mantis shrimp attacks',
+            'description': 'The speed of a mantis shrimp attack.',
             'rate' : 50
         },
         {
-            'description' : 'times the speed that an AK-47 bullet travels',
+            'name': 'Speeding bullets',
+            'description': 'The speed that an AK-47 bullet travels.',
             'rate' : 1600
         },
         {
-            'description' : 'times the top speed of a horse',
+            'name': 'Speeding horses',
+            'description': 'The top speed of a horse, the best of all the animals.',
             'rate' : 35
         }
     ],
 
 
-    // base unit = 1 pound
+    // base unit = 1 gbp
     'money' : [
         {
-            'description' : 'times the cost of the most expensive dog in the world, Big Splash the red Tibetan mastiff',
+            'name': 'Very expensive dogs',
+            'description': 'The cost of the most expensive dog in the world, Big Splash the red Tibetan mastiff.',
             'rate' : 945000
         },
         {
-            'description' : 'times the cost of The Shard',
+            'name': 'Shards',
+            'description': 'The cost of The Shard.',
             'rate' : 450000000 // £450m
         },
         {
-            'description' : 'times the cost of the London 2012 Olympic Games',
+            'name': 'Olympic Games',
+            'description': 'The cost of the London 2012 Olympic Games.',
             'rate' : 10800000000 // £10.8bn
         },
         {
-            'description' : 'times the GDP of Palau',
+            'name': 'unitName',
+            'description': 'times the GDP of Palau.',
             'rate' : 177740000000 // £177.74bn
         },
         {
-            'description' : 'times the amount Bill Gates makes every second',
+            'name': 'Bill Gates seconds',
+            'description': 'The amount Bill Gates makes every second.',
             'rate' : 189.75
         },
         {
-            'description' : 'times the average cost of a 2012 Team GB medal',
-            'rate' : 10000000 // £10m
+            'name': 'British gold medals',
+            'description': 'The average cost of a 2012 Team GB medal, including athlete training.',
+            'rate' : 4500000 // £4.5m
         },
         {
-            'description' : 'times the cost of a one way second class ticket on the Titanic',
+            'name': 'Bad cruises',
+            'description': 'The original cost of a one way second-class ticket on the Titanic.',
             'rate' : 12
         }
     ]
@@ -407,10 +458,10 @@ DC.calculateValue("2.132434456e28", 1, 1);
 DC.convert = function(value, convertFrom){
 
     // get the submitted unit type
-    var conversionType = DC.convertFrom[convertFrom]['type'];
+    var conversionType = DC.convertFrom[convertFrom].type;
 
     // calculate conversion rate
-    var conversionRate = DC.convertFrom[convertFrom]['rate'];
+    var conversionRate = DC.convertFrom[convertFrom].rate;
 
     // pick x random units to convert to
     var newUnits = DC.convertTo[conversionType];
@@ -425,6 +476,7 @@ DC.convert = function(value, convertFrom){
         var calculatedValue = DC.calculateValue(value, unit.rate, conversionRate);
 
         conversions.push({
+            'name': unit.name,
             'description': unit.description,
             'value': calculatedValue
         });

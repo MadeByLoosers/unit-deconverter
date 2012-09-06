@@ -64,7 +64,8 @@
     <% _.each(results, function(result){ %>
       <!-- use variables -->
       <dd><span>= </span><%= result.value %></dd>
-      <dt ><%= result.description %></dt>
+      <dt><%= result.name %></dt>
+      <dd class="result-description"><%= result.description %></dd>
     <% }) %>
   </script>
 
