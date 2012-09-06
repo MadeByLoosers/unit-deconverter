@@ -172,6 +172,7 @@ header p {
       width:4.5em;
       display:inline-block;
       overflow:hidden;
+      height: 42px;
     }
 
     select {
