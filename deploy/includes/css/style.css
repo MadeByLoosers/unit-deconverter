@@ -140,6 +140,23 @@ header p {
         outline:none;
     }
 
+    button {
+      background-color: #484848;
+      width: 100%;
+      -webkit-transition: all 0.3s ease-out;  /* Safari 3.2+, Chrome */
+      -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+      -o-transition: all 0.3s ease-out;  /* Opera 10.5–12.00 */
+      transition: all 0.3s ease-out;  /* Firefox 16+, Opera 12.50+ */
+    }
+
+    button.is-ready {
+      background-color: #be1981;
+    }
+
+    button.is-ready:hover {
+      background-color: #ea20a0;
+    }
+
     input {
         width: 4.1em;
         border-bottom: dashed 3px #fa1eaa;
@@ -158,12 +175,12 @@ header p {
     }
 
     select {
-      width:6.5em;
+      width: 6.5em;
       color: #fa1eaa;
       border-radius: 0;
       -webkit-appearance:none;
       -moz-appearance:none;
-      background:url(../img/select-arrow.png) #fff no-repeat right center;
+      background:url(../img/select-arrow.png) transparent no-repeat right center;
       padding:10px 30px 10px 10px;
     }
 
