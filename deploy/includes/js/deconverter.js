@@ -329,11 +329,11 @@ DC.convertTo = {
             'description': 'The cost of the London 2012 Olympic Games.',
             'rate' : 10800000000 // £10.8bn
         },
-        {
-            'name': 'unitName',
-            'description': 'times the GDP of Palau.',
-            'rate' : 177740000000 // £177.74bn
-        },
+        // {
+        //     'name': 'unitName',
+        //     'description': 'times the GDP of Palau.',
+        //     'rate' : 177740000000 // £177.74bn
+        // },
         {
             'name': 'Bill Gates seconds',
             'description': 'The amount Bill Gates makes every second.',
