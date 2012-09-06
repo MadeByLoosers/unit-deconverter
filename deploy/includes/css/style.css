@@ -154,14 +154,15 @@ header p {
       -o-transition: all 0.3s ease-out;  /* Opera 10.5–12.00 */
       transition: all 0.3s ease-out;  /* Firefox 16+, Opera 12.50+ */
       margin-top: 30px;
+      padding: 4px 0 6px;
     }
 
     button.is-ready {
-      background-color: #be1981;
+      background-color: #ea20a0;
     }
 
     button.is-ready:hover {
-      background-color: #ea20a0;
+      background-color: #be1981;
     }
 
     input {
