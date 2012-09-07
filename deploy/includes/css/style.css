@@ -133,7 +133,7 @@ header p {
 
     form p {
       float: left;
-      margin: 0 20px 0 0;
+      margin: -2px 20px 0 0;
     }
 
     input,
@@ -171,6 +171,7 @@ header p {
         -webkit-appearance:none;
         border-radius:0;
         float: left;
+        margin-right: 20px;
     }
 
     input:invalid {
@@ -181,7 +182,7 @@ header p {
     float: left;
     width:4.5em;
     overflow: hidden;
-    
+    margin-top: 1px;
   }
 
     select {
@@ -251,8 +252,7 @@ header p {
     width:6em;
   }
   select {
-    width: 9em;
-    margin-top: 0.5em;
+    margin-top: 0.31em;
   }
   #results dd {
     font-size: 40px;
