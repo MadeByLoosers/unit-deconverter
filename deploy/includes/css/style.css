@@ -239,6 +239,11 @@ header p {
   header h1 {
     font-size:40px;
   }
+
+  form {
+    font-size: 25px;
+  }
+
   form p {
     display:block;
   }
