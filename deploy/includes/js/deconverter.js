@@ -126,7 +126,7 @@ DC.convertTo = {
         },
         {
             'name': 'Trips to the moon',
-            'description': 'The distance from earth to the sun.',
+            'description': 'The distance from earth to the moon.',
             'rate': 384400000
         },
         {

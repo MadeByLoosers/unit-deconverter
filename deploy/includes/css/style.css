@@ -242,11 +242,12 @@ header p {
   form p {
     display:block;
   }
-  input[type="text"] {
+  input[type="number"] {
     width:6em;
   }
   select {
-    background-image:none;
+    width: 9em;
+    margin-top: 0.5em;
   }
   #results dd {
     font-size: 40px;
